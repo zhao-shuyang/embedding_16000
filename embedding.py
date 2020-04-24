@@ -21,7 +21,7 @@ usegpu = True
 device = torch.device("cuda" if usegpu else "cpu")
 torch.cuda.set_device(2)
 
-training_batch_size = 128
+training_batch_size = 64
 target_input_length = 501
 target_input_dim = 64
 embedding_length = 128
@@ -182,7 +182,7 @@ def evaluate(weight_path, db_path, feature_path):
     
             
 if __name__ == '__main__':    
-    train(db_path, feature_path)
-    evaluate(tmp_model_weight_path0, 'database/db_esc10.sqlite', 'database/mel_esc10.hdf5')
+    #train(db_path, feature_path)
+    evaluate(best_model_weight_path0, 'database/db_esc10.sqlite', 'database/mel_esc10.hdf5')
 
     
